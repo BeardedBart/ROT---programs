@@ -35,8 +35,13 @@ def encoder_alg(word):
     return encoded_word
 
 
+def save_to_file(word,format):
+    pass
+
+
 
 def main():
+    format = 'svg'
     encoder_alg(input_method())
 
 main()
