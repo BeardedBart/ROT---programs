@@ -35,9 +35,14 @@ def encoder_alg(word):
     return encoded_word
 
 
-def save_to_file(word,format):
-    pass
-
+def open_file(file_name,mode):
+    try:
+        fl = open(file_name,mode)
+    except IOError as e:
+        print(f'Nie można otworzyć pliku: {file_name}')
+    else:
+        return(fl)
+    
 
 
 def main():
