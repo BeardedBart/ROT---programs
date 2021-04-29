@@ -34,21 +34,20 @@ def encoder_alg(word):
     return encoded_word
 
 
-def open_file(file_name,mode):
+def save_to_file(file_name,mode,word):
+    import json
     try:
         fl = open(file_name,mode)
     except IOError as e:
         print(f'Nie można otworzyć pliku: {file_name}')
     else:
-        return(fl)
-
-def save():
-    pass
-
-
+        fl = json.dumps(word)
+        
 
 def main():
-    format = 'svg'
-    encoder_alg(input_method())
+    mode = 'wb+'
+    en_wr = encoder_alg(input_method())
+    save_to_file('test.json',mode,en_wr)
+    
 
 main()
