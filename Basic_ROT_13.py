@@ -34,20 +34,19 @@ def encoder_alg(word):
     return encoded_word
 
 
-def save_to_file(file_name,mode,word):
-    import json
+def save_to_file(file_name,word):
     try:
-        fl = open(file_name,mode)
+        fl = open(file_name,'w+')
     except IOError as e:
         print(f'Nie można otworzyć pliku: {file_name}')
     else:
-        fl = json.dumps(word)
+        fl.write(word)
+        fl.close()
         
 
 def main():
-    mode = 'wb+'
     en_wr = encoder_alg(input_method())
-    save_to_file('test.json',mode,en_wr)
+    save_to_file('test.txt',en_wr)
     
 
 main()
