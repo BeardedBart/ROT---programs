@@ -26,7 +26,6 @@ def encoder_alg(word):
                 encoded_word += encoded_letter
             else:
                 position = position - 26
-                #extended_position = 25 - position
                 encoded_letter = LETTERS[position] 
                 print(encoded_letter)
                 encoded_word += encoded_letter
@@ -42,7 +41,10 @@ def open_file(file_name,mode):
         print(f'Nie można otworzyć pliku: {file_name}')
     else:
         return(fl)
-    
+
+def save():
+    pass
+
 
 
 def main():
