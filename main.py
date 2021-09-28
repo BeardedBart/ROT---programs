@@ -1,4 +1,5 @@
 # Basic ROT-13 alghoritm 
+LETTERS = list('abcdefghijklmnopqrstuvwxyz')
 
 def input_method():
     word = input('Podaj wyraz do zakodowania: ')
@@ -6,8 +7,6 @@ def input_method():
 
 
 def encoder_alg(word):
-    LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
-    'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     encoded_word = ''
 
