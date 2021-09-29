@@ -10,7 +10,7 @@ def input_method():
     return word
 
 
-def encoder_alg(word):
+def encoder_alg(word, shift = 13):
     
     encoded_word = ''
 
@@ -20,7 +20,7 @@ def encoder_alg(word):
             
             print(f'Litera: {letter}, pozycja w liście: {position}')
             
-            position += 13
+            position += shift
             print(f'Nowa pozycja: {position}')
 
             if position <= 25:
@@ -37,7 +37,7 @@ def encoder_alg(word):
     return encoded_word
 
     
-def decoder_alg(word):
+def decoder_alg(word, shift = 13):
 
     decoded_word = ''
 
@@ -47,7 +47,7 @@ def decoder_alg(word):
             
             print(f'Litera: {letter}, pozycja w liście: {position}')
             
-            position -= 13
+            position -= shift
             print(f'Nowa pozycja: {position}')
 
             if position >= 0:
