@@ -2,7 +2,7 @@
 #
 # WARNING! Program can operate only one word yet
 
-LETTERS = [chr(c) for c in range(ord('a'), ord(z) + 1)]
+LETTERS = [chr(c) for c in range(ord('a'), ord('z') + 1)]
 
 
 def input_method():
