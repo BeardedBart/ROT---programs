@@ -42,10 +42,8 @@ def decoder_alg(word, shift = 13):
         if letter.lower() in LETTERS:
             position = LETTERS.index(letter.lower())
             
-            print(f'Litera: {letter}, pozycja w liście: {position}')
             
             position -= shift
-            print(f'Nowa pozycja: {position}')
 
             if position >= 0:
                 decoded_letter = LETTERS[position] 
