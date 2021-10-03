@@ -22,12 +22,10 @@ def encoder_alg(word, shift = 13):
 
             if position <= 25:
                 encoded_letter = LETTERS[position] 
-                print(encoded_letter)
                 encoded_word += encoded_letter
             else:
                 position = position - 26
                 encoded_letter = LETTERS[position] 
-                print(encoded_letter)
                 encoded_word += encoded_letter
     
     print(f'Zakodowane słowo: {encoded_word}')
@@ -47,12 +45,10 @@ def decoder_alg(word, shift = 13):
 
             if position >= 0:
                 decoded_letter = LETTERS[position] 
-                print(decoded_letter)
                 decoded_word += decoded_letter
             else:
                 position = 26 + position
                 decoded_letter = LETTERS[position] 
-                print(decoded_letter)
                 decoded_word += decoded_letter
     
     print(f'Zakodowane słowo: {decoded_word}')
@@ -95,9 +91,11 @@ def main():
         if chose == '1':
             en_wr = encoder_alg(input_method()) #encoded_word
             save_to_file('encoded.txt',en_wr)
+            chose = input('Wybierz opcję: ')
         elif chose == '2':
             decoded_wr = pull_from_file('encoded.txt')
             de_wr = decoder_alg(decoded_wr)
+            chose = input('Wybierz opcję: ')
     
 
 main()
