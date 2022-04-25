@@ -1,2 +1,2 @@
 # ROT---programs
-ROT alghoritms
+ROT alghoritm
