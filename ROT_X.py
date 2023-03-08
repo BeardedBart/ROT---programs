@@ -2,8 +2,9 @@
 #
 # WARNING! Program can operate only one word yet
 
-LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-           'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ]
+LETTERS = list('abcdefghijklmnopqrstuvwxyz')
+
+INCREMENTATION = 2
 
 
 def input_method():
@@ -21,7 +22,7 @@ def encoder_alg(word):
 
             print(f'Litera: {letter}, pozycja w liście: {position}')
 
-            position += 13
+            position += INCREMENTATION
             print(f'Nowa pozycja: {position}')
 
             if position <= 25:
@@ -48,7 +49,7 @@ def decoder_alg(word):
 
             print(f'Litera: {letter}, pozycja w liście: {position}')
 
-            position -= 2
+            position -= INCREMENTATION
             print(f'Nowa pozycja: {position}')
 
             if position >= 0:
@@ -90,7 +91,8 @@ def pull_from_file(file_name):
 
 
 def main():
-
+    import time
+    import sys
     print("""
     Dostępne opcje:
         1) - zakoduj słowo
@@ -102,10 +104,14 @@ def main():
         if chose == '1':
             en_wr = encoder_alg(input_method())  # encoded_word
             save_to_file('encoded.txt', en_wr)
-        elif chose == '2':
+            chose = input('Wybierz opcję: ')
+
+        if chose == '2':
             # decoded_wr = pull_from_file('encoded.txt')
             decoder_alg(
-                "yjcv ku vjg pcog qh vjg uauvgo wugf da jco qrgtcvqtu vq ocmg htgg rjqpg ecnnu ?")
+                'yjcv ku vjg pcog qh vjg uauvgo wugf da jco qrgtcvqtu vq ocmg htgg rjqpg ecnnu ?')
+            print('Done')
+            chose = input('Wybierz opcję: ')
 
 
 main()
